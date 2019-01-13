@@ -31,17 +31,31 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 /************************************ Style Guide *********************************************/
 
+/************************* General Settings of Elements and Sections...and Stylistic Sugar! *************************/
+
+/************************************ Section 1: Header *********************************************/
+
+/************************************ Section 2: Our Projects *********************************************/
+
+/************************************ Section 3: Our Expert ********************************************/
+
+/************************************ Section 4: Blog & News ********************************************/
+
+/************************************ Section 5: Footer ********************************************/
+
+/************************************ Section 6: Media Queries ********************************************/
+
 html {
   font-size: 62.5%;
 }
 
 body {
-    padding: 0.1px;
-    font-family: 'Rubik', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    position: relative;
-    background: #DBE3E9;
+  padding: 0.1px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  background: #DBE3E9;
 }
 
 img {
@@ -59,8 +73,7 @@ li {
 
 section {
   background: white;
-      height: 81.5vh;
-
+  height: 81.5vh;
 }
 
 p {
@@ -104,7 +117,7 @@ header {
 }
 
 .nav-shadow {
-box-shadow: 0px 40px 60px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 40px 60px 0px rgba(0,0,0,0.2);
 }
 
 .nav-flex {
@@ -145,7 +158,6 @@ nav ul li {
   margin-top: 20px;
 }
 
-
 button {
   background-color: orangered;
   border: none;
@@ -161,15 +173,13 @@ button:active {  /* Add this function later */
 }
 
 button:focus {
-  background-color: green;
-  
+  background-color: green; 
 }
 
 .heading-wrapper {
   position:relative;
   padding: 75px 15px;
   z-index: 1;
-
 }
 
 .background {
@@ -187,27 +197,30 @@ h1 {
 }
  
 h2 {     
-    font-family: 'Rubik', serif;
-    font-weight: normal;
-    color: #152136;
-    margin-top: 0px;
-    font-style: normal;
-    font-weight: 400;
-    visibility: hidden;
-  }
+  font-family: 'Rubik', serif;
+  font-weight: normal;
+  color: #152136;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 400;
+  visibility: hidden;
+}
 
-  .whatIDo {
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 500;
-    padding: 15px 15px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    background: #ff4a57;
-    border-radius: 30px;
-    letter-spacing: 2px;
-    text-decoration: none;
+.whatIDo {  /* MAKE IT LOOK BETTER */
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  padding: 15px 15px;
+  text-transform: uppercase;
+  background: #ff4a57;
+  border-radius: 30px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.whatIDo:focus {  /* MAKE IT LOOK BETTER */
+  box-shadow: 0px 0px 56px 20px rgba(249,160,63,1);
 }
 
 .header-social {
@@ -237,29 +250,29 @@ h2 {
 }
 
 .background {
-    position: absolute;
-    display: inline-block;
-    top: 75px;
-    right: 0;
-    left: 0;
-    visibility: visible;
-    z-index: -1;
+  position: absolute;
+  display: inline-block;
+  top: 75px;
+  right: 0;
+  left: 0;
+  visibility: visible;
+  z-index: -1;
 }
 
 .floating-developer {
-    display: inline-block;
-    color: #fff;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    font-size: 75px;
-    margin: 0;
-    transform: rotate(-15deg);
+  display: inline-block;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 75px;
+  margin: 0;
+  transform: rotate(-15deg);
 }
 
 .flex-header-content {
   display: flex;
   flex-direction: column;
-    position: relative;
+  position: relative;
 }
 
 .my-mug {
@@ -271,119 +284,176 @@ h2 {
   display: none;
 }
 
+.back-to-top {
+  position: fixed;
+  background: #ff4a57;
+  height: 60px;
+  width: 60px;
+  right: 50px;
+  bottom: 77px;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 60px;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.back-to-top a {
+  display: block;
+}
+
+.back-to-top a i {
+  display: inline-block;
+  color: white;
+}
+
+.back-to-top-show {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+
+
+/************************************ Section 6: Media Queries ********************************************/
+
 
 /* Landscape phones and down */
 @media (min-width: 364px) {
-.header-social {
-  width: 40%;
-}
+  
+  .header-social {
+    width: 40%;
+  }
 
   h1 {
-  font-size: 4rem;
-}
- 
-h2 {     
+    font-size: 4rem;
+  }
+
+  h2 {     
     font-size: 2rem;
   }
 
   .header-social i {
-  font-size: 2.1rem;
-}
+    font-size: 2.1rem;
+  }
 
 }
+
 /* Landscape phone to portrait tablet */
 @media (min-width: 641px) {
 
   h1 {
-  font-size: 5rem;
-}
- 
-h2 {     
+    font-size: 5rem;
+  }
+
+  h2 {     
     font-size: 2.2rem;
   }
 
- .background {
+  .background {
     top: -20px;
     left: 10%;
   }
-.flex-header-content {
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .flex-header-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.right {
-  position: absolute;
-  right: 0;
-  bottom: -100px;
-}
+  .right {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+  }
 
-.header-social {
-  flex-direction: column;
-  width: 100%;
-}
+  .header-social {
+    flex-direction: column;
+    width: 100%;
+  }
 
-.header-social li {
+  .header-social li {
     margin-top: 10px;
-}
+  }
 
-.header-social i {
-  font-size: 3rem;
-}
+  .header-social i {
+    font-size: 3rem;
+  }
 
-.floating-developer {
+  .floating-developer {
     font-size: 125px;
-}
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media (min-width: 961px) {
 
-h1 {
-  font-size: 7rem;
-}
- 
-h2 {     
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 {     
     font-size: 2.5rem;
   }
 
- .background {
+  .background {
     top: -30px;
     left: 20%;
   }
 
   .floating-developer {
     font-size: 150px;
-}
-
-.my-mug {
-display: block;
-}
-
-
-.drop-down-wrapper {
-  width: 60%;
-  display: flex;
-
-}
-
-
-.nav-hide {   /* Navigation while hidden */
-  opacity: 1;
-
-
-}
-
-nav ul {
-  flex-direction: row;
-  justify-content: space-between;
   }
 
-nav ul li {
-}
+  .my-mug {
+    display: block;
+  }
 
-button {
-  display: none;
-}
+
+  .drop-down-wrapper {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+
+
+  nav ul li {
+    margin-top: 0;
+    position: relative;
+  }
+
+  nav ul li a {
+    padding: 20px;
+  }
+
+  nav ul li a:before {
+  content: '';
+  position:absolute;
+  height: 2px;
+  /*  background: #ff4a57;*/
+  background: linear-gradient(150deg, rgba(249,160,63,0.5), rgba(255,74,87,1));
+  left: 0px;
+  bottom: -10px;
+  right: 100%;
+  display: block;
+  transition: right 0.5s;
+  }
+
+  nav ul li:hover a:before  {
+    right: 0%;
+  } 
+
+  .nav-hide {
+    opacity: 1;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    display: none;
+  }
 
 }
 
@@ -391,23 +461,25 @@ button {
 
 /* Portrait tablet and small desktops */
 @media (min-width: 1281px) {
- .background {
+  
+  .background {
     top: -30px;
     left: 20%;
   }
-/*  .wrapper {
+  
+  /*  .wrapper {
     height: 81.5vh;
   }*/
 
-h1 {
-  font-size: 9rem;
-}
- 
-h2 {     
+  h1 {
+    font-size: 9rem;
+  }
+
+  h2 {     
     font-size: 3rem;
   }
 
-.whatIDo {
+  .whatIDo {
     padding: 21px 53px;
     text-transform: uppercase;
     vertical-align: middle;
@@ -415,18 +487,13 @@ h2 {
     border-radius: 30px;
     letter-spacing: 2px;
     text-decoration: none;
-}
-
-
+  }
 
   .floating-developer {
     font-size: 250px;
   }
 
 }
-
-/* Headings
--------------------------------------------------------------- */
 
 
 
