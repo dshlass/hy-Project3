@@ -103,6 +103,8 @@ $(function() {
   });
 });
 
+
+
 navWrapper = document.getElementById("navWrapper");
 navShow = document.getElementById("navShow");
 button = document.getElementById("btn");
@@ -111,6 +113,8 @@ scrollToTop = document.getElementById("scrollToTop");
 function getYPosition() {
   return window.scrollY;
 }
+
+getYPosition();
 
 function navScroll() {
   if (getYPosition() >= 1 ) {
