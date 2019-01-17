@@ -5,7 +5,7 @@
   <title>Dale Shlass</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Rubik:400,500,700,900|Rufina:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/_animations.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/style.css"/>
 
@@ -13,42 +13,23 @@
 
 </head>
 <body id="top">
-    <div id="navWrapper" class="nav-wrapper">
-      <div class="nav-flex">
-        <div class="header-logo">
-          <img src="./assets/logoMedium.png" alt="">
-        </div>
-        <div class="drop-down-wrapper">
-        <nav id="navShow" class="nav-hide">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">We Do</a>
-          </li>
-          <li>
-            <a href="">Portfolio</a>
-          </li>
-          <li>
-            <a href="">Resume</a>
-          </li>
-          <li>
-            <a href="">Blog</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      </div>
-        <div class="testing"> 
-          <button id="btn">Nav</button>
-        </div>
-      </div> 
+<div id="navWrapper" class="nav-wrapper">
+  <div id="sticky-wrapper"class="sticky-wrapper">
+    <div class="header-logo">
+      <img src="./assets/logoMedium.png" alt="">
+    </div>
+    <input id="toggle" name="toggle" type="checkbox" >
+    <nav id="menuClose"class="tab-content">
+      <ul id ='test' class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Photos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+      <label for="toggle">&#9776;</label>
+  </div>
+</div>
       
     </div> 
   <header>
@@ -92,47 +73,38 @@
     </div>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 <script>
 
-$(function() {
-  $('a').smoothScroll({
-     offset: 0
-  });
-});
-
-
-
 navWrapper = document.getElementById("navWrapper");
-navShow = document.getElementById("navShow");
-button = document.getElementById("btn");
+stickyWrapper= document.getElementById("sticky-wrapper");
 scrollToTop = document.getElementById("scrollToTop"); 
+menuClose = document.getElementById("menuClose"); 
+element = document.getElementById('test');
+checked = document.getElementById("toggle").checked;
 
 function getYPosition() {
   return window.scrollY;
 }
 
-function navScroll() {
+function isChecked() {
+  return checked;
+}
+
+function navSticky() {
   if (getYPosition() >= 1 ) {
-    navWrapper.className = "nav-wrapper nav-fixed nav-shadow";
-  } else navWrapper.className = "nav-wrapper";
+    navWrapper.className = "nav-wrapper nav-fixed";
+  } else {navWrapper.className = "nav-wrapper";
+}
 };
 
-
-function navDropDown() {
-  if (navShow.className === "nav-hide"){
-    navShow.className = "nav-show";
-  } else navShow.className = 'nav-hide';
-};
-
-function navShadow() {   
-  if (getYPosition() >= 0 && navShow.className === 'nav-show') {
-    navShow.className = "nav-show nav-shadow";
-  } else if (getYPosition() === 0 && navShow.className === 'nav-show nav-shadow')
-     navShow.className = "nav-show";
-};
+function navShadow() {
+  if (getYPosition() >= 1 ) {
+        stickyWrapper.className = "sticky-wrapper drop-down-shadow";
+  } else { stickyWrapper.className = "sticky-wrapper";
+  }
+}
 
 function toTop() {
   if (getYPosition() >= 300 ) {
@@ -142,10 +114,11 @@ function toTop() {
   }
 };
 
-window.addEventListener("scroll", navScroll);
+// injectStyles('a:hover { color: red; }'); FOR USE LATER ON IF NEEDED
+
+window.addEventListener("scroll", navSticky);
 window.addEventListener("scroll", navShadow);
 window.addEventListener("scroll", toTop);
-button.addEventListener("click", navDropDown);
 
 </script>
 
