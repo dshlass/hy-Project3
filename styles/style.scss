@@ -1,4 +1,39 @@
+
+
+
+
+/***************************************************************************/
+/*      LEGEND                                                             */
+/*      HIGHLIGHT AND USE USE CTRL + F + ENTER TO SKIP TO EACH SECTION     */ 
+/*                                                                         */
+/*                                                                         */
+/*      SETUP!                                                             */
+/*      Style Guide                                                        */
+/*      General Settings of Elements and Sections...and Stylistic Sugar!   */
+/*      Section 1: Header                                                  */
+/*      Section 2:                                            */
+/*      Section 3:                                               */
+/*      Section 4:                                              */
+/*      Section 5:                                                  */
+/*                                                                         */
+/***************************************************************************/
+
+
+
+
+/*********************************** Setup! *********************************************/
 @import 'normalize';
+
+$logo-orange: #F9A03F;
+$buttons: #ff4a57;
+
+$rufinaFont: 'Rufina', serif;
+
+
+$rubikFont:'Rubik', serif;
+
+
+/************************* General Settings of Elements and Sections...and Stylistic Sugar! *************************/
 
 html {
   font-size: 62.5%;
@@ -9,7 +44,6 @@ body {
   padding: 0.1px;
   position: relative;
   background: #DBE3E9;
-  height: 500vh;
 }
 
 img {
@@ -29,6 +63,26 @@ a {
   text-decoration: none;
 }
 
+/* FIX PAGE STYLINGS */
+
+h1 {
+  font-weight: 700;
+  font-size: 50px;
+  font-family: 'Rufina', serif;
+  visibility: hidden; //For the animation
+}
+ 
+.header-flex-left p {     
+  font-family: 'Rubik', serif;
+  font-weight: normal;
+  color: #152136;
+  margin-top: 35px;
+  font-style: normal;
+  font-weight: 400;
+  visibility: hidden;  //For the animation
+}
+
+/************************************ Section 1: Header *********************************************/
 
 header {
   background: #DBE3E9;
@@ -40,7 +94,7 @@ header {
   top: 4%;
   margin: 4% 4% 0 4%;
   background: white;
-  height: 100px;
+  height: 98px;
   z-index: 5;
   transition: all 0.5s;
 }
@@ -58,18 +112,20 @@ header {
   box-shadow: 0px 40px 60px 0px rgba(0,0,0,0.2);
 }
 
-.nav {
-  // text-align: center;
+.nav {   //Start of the navigation block
+
   li {
     position: relative;
     margin: 10px;
+
     a {
       display: block;
       padding: 20px;
       font-size: 1.6rem;
-      font-weight: 500;
+      font-weight: 600;
       color: black;
     }  
+
     a:before {
       content: '';
       position:absolute;
@@ -84,12 +140,11 @@ header {
   }
 } 
 
-  nav ul li:hover a:before  {
-    right: 70%;
-  } 
+nav ul li:hover a:before  {
+  right: 70%;
+} 
 
 .sticky-wrapper {   //start of the code block for the sticky wrapper
-  
   position: relative;
   margin-bottom: 1px;
   width: 100%;
@@ -107,39 +162,34 @@ header {
     z-index: -1;
   }
 
-  input:checked ~ .tab-content {
-    max-height: 35vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
-  }
-
-  .added {
-    max-height: 0;
-  }
-
-
-  
   label {
    position: absolute;
    display: block;
    top: 0;
    right: 0;
    font-size: 30px;
-   margin: 30px 20px;
-   color: orange;
+   margin: 25px 15px;
+   padding: 5px;
+   color: $logo-orange;
+   border: 2px solid $logo-orange;
   }
   
   .tab-content {
     max-height: 0;
-    margin-top: 14px;
+    margin-top: 13px;
     overflow: hidden;
     background: #fff;
     transition: max-height 0.5s ease-out;
     position: relative;
   }
-  
+
+  input:checked ~ .tab-content {
+    max-height: 35vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
+  }
 }
 
 button {
-  background-color: orangered;
+  background-color: $logo-orange    ;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -149,8 +199,8 @@ button {
   font-size: 16px;
 }
 
-button:active {  /* Add this function later */
-}
+// button:active {  Add this function later
+// }
 
 button:focus {
   background-color: green; 
@@ -158,7 +208,7 @@ button:focus {
 
 .heading-wrapper {
   position:relative;
-  padding: 75px 15px;
+  padding: 5%;
   z-index: 1;
 }
 
@@ -166,24 +216,22 @@ button:focus {
   visibility: hidden;
 }
 
-
-/* FIX PAGE STYLINGS */
-
-h1 {
+.floating-developer {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  font-size: 50px;
-  font-family: 'Rufina', serif;
-  visibility: hidden;
+  font-size: 7.5rem;
+  margin: 0;
+  padding-left: 5%;
+  transform: rotate(-15deg);
+  z-index: 2;
 }
- 
-h2 {     
-  font-family: 'Rubik', serif;
-  font-weight: normal;
-  color: #152136;
-  margin-top: 0px;
-  font-style: normal;
-  font-weight: 400;
-  visibility: hidden;
+
+.flex-header-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .whatIDo {  /* MAKE IT LOOK BETTER */
@@ -193,40 +241,41 @@ h2 {
   font-weight: 500;
   padding: 15px 15px;
   text-transform: uppercase;
-  background: #ff4a57;
+  background: $buttons;
   border-radius: 30px;
   letter-spacing: 2px;
   text-decoration: none;
 }
 
-.whatIDo:focus {  /* MAKE IT LOOK BETTER */
-  box-shadow: 0px 0px 56px 20px rgba(249,160,63,1);
+.whatIDo:focus {  // MAKE IT LOOK BETTER
+  box-shadow: 0px 0px 56px 20px $logo-orange;
 }
 
-.header-social {
+.header-social {  //Head of the social header section
   margin-top: 50px;
   width: 60%;
   display: flex;
   justify-content: space-between;
-}
 
-.header-social li {
-  background: #e5ecf1;
-  display: inline;
-}
+  li {
+    background: #e5ecf1;
+    display: inline;
+  }
 
-.header-social li:hover a{
-  background: #fff;
-}
+  li:hover a,
+  li:active a {
+    background: #fff;
+  }
 
-.header-social a {
-  display: inline-block;
-  padding: 10px;
-}
+  a {
+    display: inline-block;
+    padding: 10px;
+  }
 
-.header-social i {
-  font-size: 1.8rem;
-  color: #717377;
+  i {
+    font-size: 1.8rem;
+    color: #717377;
+  }
 }
 
 .background {
@@ -239,25 +288,8 @@ h2 {
   z-index: -1;
 }
 
-.floating-developer {
-  display: inline-block;
-  color: #fff;
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-  font-size: 75px;
-  margin: 0;
-  transform: rotate(-15deg);
-  z-index: 2;
-}
-
-.flex-header-content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .my-mug {
-  width: 20%;
+  width: 18%;
   position: absolute;
   bottom: 0;
   right: 15%;
@@ -267,7 +299,7 @@ h2 {
 
 .back-to-top {
   position: fixed;
-  background: #ff4a57;
+  background: $buttons;
   height: 60px;
   width: 60px;
   right: 50px;
@@ -295,11 +327,114 @@ h2 {
   opacity: 1;
 }
 
+/************************************ Section 2: Our Projects *********************************************/
+
+
+.wrapper-white {
+  background: white;
+  padding: 0 5%;
+}
+
+
+.about-flex-wrapper {
+ margin-top: 5%;
+ padding-top: 5%;
+ background: white;
+ display: flex;
+justify-content: center;
+}
+
+.about-flex-left {
+  display: inline-block;
+  width: 30%;
+  margin-right: 5%;
+
+}
+
+.about-flex-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 5%;
+
+  .contact-flex {
+    ul {
+      display: flex;
+      justify-content: flex-start;
+    
+      li {
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+      }
+
+      li:last-child {
+        margin-left: 10%;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: $rubikFont;
+    color: #ff4a57;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+    font-family: $rufinaFont;
+    line-height: 1;
+    letter-spacing: 2px;
+
+  }
+
+  h4 {
+    color: #929cad;
+    font-weight: 500;
+    font-family: $rubikFont;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 2rem;
+    font-family: $rufinaFont;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  a {
+    font-size: 2rem;
+    font-family: $rufinaFont;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.contact-logo {
+  min-width: 46px;
+  margin-right: 20px;
+}
 
 
 
 
-/* Landscape phones and down */
+
+
+
+
+/************************************ Section 6: Media Queries ********************************************/
+
+// Landscape phones and down
 @media (min-width: 364px) {
   
   .header-social {
@@ -310,7 +445,7 @@ h2 {
     font-size: 4rem;
   }
 
-  h2 {     
+  .header-flex-left p {     
     font-size: 2rem;
   }
 
@@ -318,16 +453,22 @@ h2 {
     font-size: 2.1rem;
   }
 
+  .floating-developer {
+    padding-left: 5%;
+    font-size: 10rem;
+  }
+
+
 }
 
-/* Landscape phone to portrait tablet */
+// Landscape phone to portrait tablet
 @media (min-width: 641px) {
 
   h1 {
     font-size: 5rem;
   }
 
-  h2 {     
+  .header-flex-left p {     
     font-size: 2.2rem;
   }
 
@@ -340,10 +481,10 @@ h2 {
     justify-content: space-between;
   }
 
-  .right {
+  .header-flex-right {
     position: absolute;
     right: 0;
-    bottom: -100px;
+    bottom: 0;
   }
 
   .header-social {
@@ -360,18 +501,23 @@ h2 {
   }
 
   .floating-developer {
-    font-size: 125px;
+    font-size: 12.5rem;
+    padding-top: 12%;
   }
 }
 
-/* Landscape phone to portrait tablet */
+//Landscape phone to portrait tablet
 @media (min-width: 961px) {
+
+  .nav-wrapper {
+    height: 85px;
+  }
 
   h1 {
     font-size: 7rem;
   }
 
-  h2 {     
+  .header-flex-left p {     
     font-size: 2.5rem;
   }
 
@@ -396,50 +542,52 @@ h2 {
   }
 
 
-  nav ul li {
-    margin-top: 0;
-    position: relative;
-  }
+  .sticky-wrapper {   //start of the code block for the sticky wrapper
+    display: flex;
+    justify-content: space-between;
 
-  nav ul li a {
-    padding: 20px;
-  }
+    .header-logo {
+      width: 50px;
+      margin: 10px 0 0 20px;
+    }
+  
+    input {
+      display: none;
+    }
 
-  nav ul li a:before {
-  content: '';
-  position:absolute;
-  height: 2px;
-  /*  background: #ff4a57;*/
-  background: linear-gradient(150deg, rgba(249,160,63,0.5), rgba(255,74,87,1));
-  left: 0px;
-  bottom: -10px;
-  right: 100%;
-  display: block;
-  transition: right 0.5s;
-  }
+    label {
+     display: none;
+    }
 
-  nav ul li:hover a:before  {
-    right: 0%;
-  } 
+    .tab-content {
+     max-height: 150px;
+     margin: 0;
+    }
 
-  .nav-hide {
-    opacity: 1;
-  }
-
-  nav ul {
+  }  //End of code for sticky wrapper
+  
+  .nav { //Start of the code block for the navigation
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+    margin-right: 40px;
 
-  button {
-    display: none;
+    li {
+      align-content: center;
+    }
+
+    li a {
+      padding: 20px;
+    }
+    
+    li:hover a:before  {
+      right: 0%;
+    }
   }
 
 }
 
-
-
-/* Portrait tablet and small desktops */
+// Portrait tablet and small desktops
 @media (min-width: 1281px) {
   
   .background {
@@ -447,15 +595,16 @@ h2 {
     left: 20%;
   }
   
-  /*  .wrapper {
-    height: 81.5vh;
-  }*/
+ .wrapper {
+    width: 90%;
+    margin: 0 auto; 
+  }
 
   h1 {
     font-size: 9rem;
   }
 
-  h2 {     
+  .left p {     
     font-size: 3rem;
   }
 
@@ -463,14 +612,19 @@ h2 {
     padding: 21px 53px;
     text-transform: uppercase;
     vertical-align: middle;
-    background: #ff4a57;
+    background: $buttons;
     border-radius: 30px;
     letter-spacing: 2px;
     text-decoration: none;
   }
 
   .floating-developer {
-    font-size: 250px;
+    font-size: 25rem;
+    padding-top: 5%; 
+  }
+
+  .my-mug {
+    width: 14%;
   }
 
 }

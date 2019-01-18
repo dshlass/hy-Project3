@@ -176,8 +176,7 @@ button {
   font-size: 16px;
 }
 
-button:active {  /* Add this function later */
-}
+/* button:active {  /* Add this function later */
 
 button:focus {
   background-color: green; 
