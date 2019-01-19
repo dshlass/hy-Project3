@@ -11,10 +11,10 @@
 /*      Style Guide                                                        */
 /*      General Settings of Elements and Sections...and Stylistic Sugar!   */
 /*      Section 1: Header                                                  */
-/*      Section 2:                                            */
-/*      Section 3:                                               */
-/*      Section 4:                                              */
-/*      Section 5:                                                  */
+/*      Section 2: About                                                   */
+/*      Section 3: What We Do                                              */
+/*      Section 4:                                                         */
+/*      Section 5:                                                         */
 /*                                                                         */
 /***************************************************************************/
 
@@ -37,7 +37,7 @@ $rubikFont:'Rubik', serif;
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth; 
 }
 
 body {
@@ -75,6 +75,7 @@ h1 {
 .header-flex-left p {     
   font-family: 'Rubik', serif;
   font-weight: normal;
+  font-size: 2rem;
   color: #152136;
   margin-top: 35px;
   font-style: normal;
@@ -184,12 +185,13 @@ nav ul li:hover a:before  {
   }
 
   input:checked ~ .tab-content {
-    max-height: 35vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
+    max-height: 57vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
   }
 }
 
 button {
-  background-color: $logo-orange    ;
+  background-color: $logo-orange;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -327,7 +329,7 @@ button:focus {
   opacity: 1;
 }
 
-/************************************ Section 2: Our Projects *********************************************/
+/************************************ Section 2: About *********************************************/
 
 
 .wrapper-white {
@@ -338,11 +340,11 @@ button:focus {
 
 .about-flex-wrapper {
  margin-top: 5%;
- padding-top: 5%;
+ padding: 15%;
  background: white;
  display: flex;
  flex-direction: column;
-justify-content: center;
+ justify-content: center;
 }
 
 .about-flex-left {
@@ -353,8 +355,7 @@ justify-content: center;
 }
 
 .about-flex-right {
-  display: flex;
-  flex-direction: column;
+
   width: 100%;
 
   .contact-flex {
@@ -370,7 +371,7 @@ justify-content: center;
       }
 
       li:last-child {
-        margin-top: 10%;
+        margin-top: 5%;
       }
     }
   }
@@ -389,7 +390,6 @@ justify-content: center;
     font-family: $rufinaFont;
     line-height: 1;
     letter-spacing: 2px;
-
   }
 
   h4 {
@@ -403,8 +403,9 @@ justify-content: center;
     margin: 0;
   }
 
+  
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: $rufinaFont;
     text-transform: uppercase;
     font-weight: 700;
@@ -413,7 +414,7 @@ justify-content: center;
   }
 
   a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: $rufinaFont;
     text-transform: uppercase;
     font-weight: 700;
@@ -427,6 +428,26 @@ justify-content: center;
   margin-right: 20px;
 }
 
+/************************************ Section 3: What We Do *********************************************/
+
+.what-we-do {
+
+  h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: $rubikFont;
+    color: #ff4a57;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  
+  h2 {
+    font-size: 3.8rem;
+    font-family: $rufinaFont;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+}
 
 
 
@@ -439,16 +460,14 @@ justify-content: center;
 // Landscape phones and down
 @media (min-width: 364px) {
   
+  //Section 1: Header
+
   .header-social {
     width: 40%;
   }
 
   h1 {
     font-size: 4rem;
-  }
-
-  .header-flex-left p {     
-    font-size: 2rem;
   }
 
   .header-social i {
@@ -466,6 +485,7 @@ justify-content: center;
 // Landscape phone to portrait tablet
 @media (min-width: 641px) {
 
+    //Section 1: Header
   h1 {
     font-size: 5rem;
   }
@@ -505,6 +525,21 @@ justify-content: center;
   .floating-developer {
     font-size: 12.5rem;
     padding-top: 12%;
+  }
+
+    //Section 2: About me
+  .about-flex-right {
+
+    p {
+      font-size: 1.7rem;
+
+    }
+  
+    a {
+      font-size: 1.7rem;
+
+  }
+
   }
 }
 
@@ -590,7 +625,7 @@ justify-content: center;
   //About section Code
   .about-flex-wrapper {
     margin-top: 5%;
-    padding-top: 5%;
+    padding: 5% 15%;
     display: flex;
     flex-direction: row;
    justify-content: center;
@@ -598,7 +633,6 @@ justify-content: center;
 
    .about-flex-left {
      width: 50%;
-     margin-right: 5%;
    }
 
    .about-flex-right {
@@ -608,26 +642,14 @@ justify-content: center;
     margin-left: 5%;
 
     .contact-flex {
-      ul {
-        display: flex;
-        flex-direction: row;
-
-        justify-content: flex-start;
-      
+      ul {   
+        
         li {
-          display: flex;
-          justify-content: baseline;
-          align-items: center;
-        }
-  
-        li:last-child {
-          margin-top: 0;
-          margin-left: 10%;
+          width: 63%;
         }
       }
     }
   }
-
 }
 
 // Portrait tablet and small desktops
@@ -667,7 +689,33 @@ justify-content: center;
   }
 
   .my-mug {
-    width: 14%;
+    width: 18%;
   }
 
+  .about-flex-right {
+
+    .contact-flex {
+      ul {
+        flex-direction: row;    
+        
+        li {
+          width: 50%;
+        }
+        li:last-child {
+          margin-top: 0;
+          margin-left: 10%;
+        }
+      }
+    }
+ 
+
+    p {
+      font-size: 2rem;
+
+    }
+  
+    a {
+      font-size: 2rem;
+    }
+  }
 }

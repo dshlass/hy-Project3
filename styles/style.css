@@ -7,10 +7,10 @@
 /*      Style Guide                                                        */
 /*      General Settings of Elements and Sections...and Stylistic Sugar!   */
 /*      Section 1: Header                                                  */
-/*      Section 2:                                            */
-/*      Section 3:                                               */
-/*      Section 4:                                              */
-/*      Section 5:                                                  */
+/*      Section 2: About                                                   */
+/*      Section 3: What We Do                                              */
+/*      Section 4:                                                         */
+/*      Section 5:                                                         */
 /*                                                                         */
 /***************************************************************************/
 /*********************************** Setup! *********************************************/
@@ -249,7 +249,6 @@ template {
 /************************* General Settings of Elements and Sections...and Stylistic Sugar! *************************/
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -286,6 +285,7 @@ h1 {
 .header-flex-left p {
   font-family: 'Rubik', serif;
   font-weight: normal;
+  font-size: 2rem;
   color: #152136;
   margin-top: 35px;
   font-style: normal;
@@ -398,7 +398,8 @@ nav ul li:hover a:before {
 }
 
 .sticky-wrapper input:checked ~ .tab-content {
-  max-height: 35vh;
+  max-height: 57vh;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -551,7 +552,7 @@ button:focus {
   opacity: 1;
 }
 
-/************************************ Section 2: Our Projects *********************************************/
+/************************************ Section 2: About *********************************************/
 .wrapper-white {
   background: white;
   padding: 0 5%;
@@ -559,7 +560,7 @@ button:focus {
 
 .about-flex-wrapper {
   margin-top: 5%;
-  padding-top: 5%;
+  padding: 15%;
   background: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -580,13 +581,6 @@ button:focus {
 }
 
 .about-flex-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 100%;
 }
 
@@ -616,7 +610,7 @@ button:focus {
 }
 
 .about-flex-right .contact-flex ul li:last-child {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .about-flex-right h3 {
@@ -647,7 +641,7 @@ button:focus {
 }
 
 .about-flex-right p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Rufina", serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -656,7 +650,7 @@ button:focus {
 }
 
 .about-flex-right a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Rufina", serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -669,6 +663,23 @@ button:focus {
   margin-right: 20px;
 }
 
+/************************************ Section 3: What We Do *********************************************/
+.what-we-do h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: "Rubik", serif;
+  color: #ff4a57;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.what-we-do h2 {
+  font-size: 3.8rem;
+  font-family: "Rufina", serif;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
 /************************************ Section 6: Media Queries ********************************************/
 @media (min-width: 364px) {
   .header-social {
@@ -676,9 +687,6 @@ button:focus {
   }
   h1 {
     font-size: 4rem;
-  }
-  .header-flex-left p {
-    font-size: 2rem;
   }
   .header-social i {
     font-size: 2.1rem;
@@ -730,6 +738,12 @@ button:focus {
   .floating-developer {
     font-size: 12.5rem;
     padding-top: 12%;
+  }
+  .about-flex-right p {
+    font-size: 1.7rem;
+  }
+  .about-flex-right a {
+    font-size: 1.7rem;
   }
 }
 
@@ -809,7 +823,7 @@ button:focus {
   }
   .about-flex-wrapper {
     margin-top: 5%;
-    padding-top: 5%;
+    padding: 5% 15%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -823,7 +837,6 @@ button:focus {
   }
   .about-flex-left {
     width: 50%;
-    margin-right: 5%;
   }
   .about-flex-right {
     display: -webkit-box;
@@ -836,32 +849,8 @@ button:focus {
     width: 50%;
     margin-left: 5%;
   }
-  .about-flex-right .contact-flex ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
   .about-flex-right .contact-flex ul li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: baseline;
-        -ms-flex-pack: baseline;
-            justify-content: baseline;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .about-flex-right .contact-flex ul li:last-child {
-    margin-top: 0;
-    margin-left: 10%;
+    width: 63%;
   }
 }
 
@@ -894,7 +883,26 @@ button:focus {
     padding-top: 5%;
   }
   .my-mug {
-    width: 14%;
+    width: 18%;
+  }
+  .about-flex-right .contact-flex ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .about-flex-right .contact-flex ul li {
+    width: 50%;
+  }
+  .about-flex-right .contact-flex ul li:last-child {
+    margin-top: 0;
+    margin-left: 10%;
+  }
+  .about-flex-right p {
+    font-size: 2rem;
+  }
+  .about-flex-right a {
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
