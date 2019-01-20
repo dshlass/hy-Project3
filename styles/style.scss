@@ -290,13 +290,18 @@ button:focus {
   z-index: -1;
 }
 
-.my-mug {
+.star-wars {
   width: 18%;
   position: absolute;
   bottom: 0;
   right: 15%;
   z-index: 3;
   display: none;
+
+  svg {
+    width: 70%;
+    fill: #f3f5ff;
+  }
 }
 
 .back-to-top {
@@ -371,7 +376,7 @@ button:focus {
       }
 
       li:last-child {
-        margin-top: 5%;
+        margin-top: 10%;
       }
     }
   }
@@ -430,7 +435,17 @@ button:focus {
 
 /************************************ Section 3: What We Do *********************************************/
 
-.what-we-do {
+.wrapper-light {
+  padding: 0 5%;
+  background: #f3f5ff;
+}
+
+.what-we-do-wrapper {
+  padding: 5%;
+}
+
+.what-we-do {   //start of the what we do block
+  text-align: center;
 
   h3 {
     font-size: 1.8rem;
@@ -446,8 +461,102 @@ button:focus {
     font-family: $rufinaFont;
     line-height: 1;
     letter-spacing: 2px;
+    position: relative;
   }
+
+  h2:after {
+    position: absolute;
+    content: "";
+    height: 5px;
+    background: linear-gradient(to right, rgba(206, 214, 255, 1) 0%, rgba(206, 214, 255, 1) 60%, rgba(206, 214, 255, 0) 60%, rgba(206,214,255,0) 80%, rgba(206, 214, 255, 1) 80%, rgba(206, 214, 255, 1) 100%);    
+    bottom: -20px;
+    left: 40%;
+    right: 40%;
+  }
+} //end of the what we do code block
+
+.service-container {
+
+  margin-top: 20%;  //add change as you scale
+
+  ul {
+    
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  li {
+    background: white;
+    width: 100%;
+    padding: 5%;
+    margin-bottom: 10%;
+  }
+
+
+  img {
+    max-width: 46px;
+  }
+
+  h4 {
+    font-family: $rubikFont;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 24px
+  }
+
+  h4:after {
+    position: absolute;
+    content: "";
+    height: 5px;
+    background: #e7e7e7;    
+    bottom: 0;
+    left: 0;
+    right: 90%;
+    transition: all 0.5s;
+    border-radius: 5px;
+  }
+
+  li:hover h4:after {
+    right: 75%;
+    background: #ff4a57;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 2.6rem;
+    color: #666;
+    margin-bottom: 10%;
+  }
+
+  a {
+    color: #a4b0c4;
+    background: #f3f3f3;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s;
+    margin-bottom: 5%;
+  }
+
+  a:hover {
+    background: #ff4a57;
+    color: #fff;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+
 }
+
 
 
 
@@ -537,10 +646,26 @@ button:focus {
   
     a {
       font-size: 1.7rem;
+    }
+  }
+
+
+
+  .service-container {
+    margin-top: 10%; 
+
+    li {
+      margin-bottom: 5%;
+    }
+
+    li:hover h4:after {
+      right: 85%;
+    }
+
 
   }
 
-  }
+
 }
 
 //Landscape phone to portrait tablet
@@ -567,7 +692,7 @@ button:focus {
     font-size: 150px;
   }
 
-  .my-mug {
+  .star-wars {
     display: block;
   }
 
@@ -632,7 +757,7 @@ button:focus {
    }
 
    .about-flex-left {
-     width: 50%;
+     width: 35%;
    }
 
    .about-flex-right {
@@ -650,6 +775,26 @@ button:focus {
       }
     }
   }
+
+  .service-container {
+
+    margin-top: 7%;  //add change as you scale
+  
+    // ul {
+      
+    // }
+  
+    li {
+      width: 47.5%;
+    }
+
+    li:hover h4:after {
+      right: 75%;
+    }
+  }
+
+
+
 }
 
 // Portrait tablet and small desktops
@@ -718,4 +863,27 @@ button:focus {
       font-size: 2rem;
     }
   }
+
+  .what-we-do {
+    h2:after {
+      left: 45%;
+      right: 45%;
+    }
+  }
+
+  .service-container {
+  
+    margin-top: 5%;
+    // ul {
+      
+    // }
+  
+    li {
+      background: white;
+      width: 30%;
+      padding: 5%;
+    }
+  }
+
+
 }
