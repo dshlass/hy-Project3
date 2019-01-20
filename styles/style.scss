@@ -12,9 +12,11 @@
 /*      General Settings of Elements and Sections...and Stylistic Sugar!   */
 /*      Section 1: Header                                                  */
 /*      Section 2: About                                                   */
-/*      Section 3: What We Do                                              */
-/*      Section 4:                                                         */
-/*      Section 5:                                                         */
+/*      Section 3: What I Do                                               */
+/*      Section 4: Portfolio                                               */
+/*      Section 5: Resume                                                  */
+/*      Section 6: Footer                                                  */
+/*      Section 7: Media Queries                                           */
 /*                                                                         */
 /***************************************************************************/
 
@@ -24,12 +26,11 @@
 /*********************************** Setup! *********************************************/
 @import 'normalize';
 
-$logo-orange: #F9A03F;
+//Color Variables
 $salmon: #ff4a57;
 
+//Font Family Variables
 $rufinaFont: 'Rufina', serif;
-
-
 $rubikFont:'Rubik', serif;
 
 
@@ -141,11 +142,12 @@ header {
   }
 } 
 
-nav ul li:hover a:before  {
+nav ul li:hover a:before,
+nav ul li:active a:before  {
   right: 70%;
 } 
 
-.sticky-wrapper {   //start of the code block for the sticky wrapper
+.sticky-wrapper {   //start of the sticky wrapper code block
   position: relative;
   margin-bottom: 1px;
   width: 100%;
@@ -155,6 +157,7 @@ nav ul li:hover a:before  {
   a {
     display: block;
   }
+
   .header-logo {
     width: 50px;
     margin: 10px 0 0 20px;
@@ -167,15 +170,15 @@ nav ul li:hover a:before  {
   }
 
   label {
-   position: absolute;
-   display: block;
-   top: 0;
-   right: 0;
-   font-size: 30px;
-   margin: 25px 15px;
-   padding: 5px;
-   color: $salmon;
-   border: 2px solid $salmon;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    margin: 25px 15px;
+    padding: 5px;
+    color: $salmon;
+    border: 2px solid $salmon;
   }
   
   .tab-content {
@@ -188,27 +191,9 @@ nav ul li:hover a:before  {
   }
 
   input:checked ~ .tab-content {
-    max-height: 100vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
+    max-height: 100vh;
     border-bottom: 0.5px solid rgba(0,0,0,0.1);
   }
-}
-
-button {
-  background-color: $logo-orange;
-  border: none;
-  color: #fff;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-// button:active {  Add this function later
-// }
-
-button:focus {
-  background-color: green; 
 }
 
 .heading-wrapper {
@@ -333,22 +318,21 @@ button:focus {
   opacity: 1;
 }
 
-/************************************ Section 2: About *********************************************/
 
+/************************************ Section 2: About *********************************************/
 
 .wrapper-white {
   background: white;
   padding: 0 5%;
 }
 
-
 .about-flex-wrapper {
- margin-top: 5%;
- padding: 15%;
- background: white;
- display: flex;
- flex-direction: column;
- justify-content: center;
+  margin-top: 5%;
+  padding: 15%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-flex-left {
@@ -358,8 +342,7 @@ button:focus {
 
 }
 
-.about-flex-right {
-
+.about-flex-right { //Start of about-flex-right code block
   width: 100%;
 
   .contact-flex {
@@ -407,7 +390,6 @@ button:focus {
     margin: 0;
   }
 
-  
   p {
     font-size: 1.5rem;
     font-family: $rufinaFont;
@@ -425,7 +407,7 @@ button:focus {
     line-height: 1.2;
     color: black;
   }
-}
+} //End of about-flex-right code block
 
 .contact-logo {
   min-width: 46px;
@@ -474,14 +456,11 @@ button:focus {
   }
 } //end of the what we do code block
 
-.service-container {
-
-  margin-top: 20%;  //add change as you scale
+.service-container { //Start of the service container code block
+  margin-top: 20%;
 
   ul {
-    
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -492,7 +471,6 @@ button:focus {
     padding: 5%;
     margin-bottom: 10%;
   }
-
 
   img {
     max-width: 46px;
@@ -519,7 +497,8 @@ button:focus {
     border-radius: 5px;
   }
 
-  li:hover h4:after {
+  li:hover h4:after,
+  li:active h4:after {
     right: 75%;
     background: $salmon;
   }
@@ -545,7 +524,8 @@ button:focus {
     margin-bottom: 5%;
   }
 
-  a:hover {
+  a:hover,
+  a:active {
     background: $salmon;
     color: #fff;
   }
@@ -553,17 +533,19 @@ button:focus {
   i {
     font-size: 1.2rem;
   }
+} //End of the service container code block
 
-}
+/************************************ Section 6: Footer ********************************************/
 
-/************************************ Section 5: Footer ********************************************/
 footer {
   padding-top: 30%;
   background: #152136;
   text-align: center;
 }
+
 .blue-wrapper {
-    p {
+    
+  p {
     font-size: 1.8rem;
     line-height: 30px;
     margin-bottom: 0;
@@ -574,15 +556,13 @@ footer {
   }
 }
 
-
 .footer-logo {
   width: 65px;
   margin: 0 auto;
   padding-bottom: 10%;
-  
 }
 
-.footer-social {  //Head of the social header section
+.footer-social {  //Start of the social header code block
   margin: 20% 0 30% 0;
   width: 100%;
   display: flex;
@@ -601,21 +581,18 @@ footer {
   a {
     display: block;
     padding: 30px;
-    border-radius: 50%;
-
   }
 
   i {
     font-size: 2.2rem;
     color: #717377;
   }
-}
+} //End of the social header code block
 
 .copyright-wrapper {
   border-top: 0.5px solid #b4bbc9;
   background: #1c2940;
-
-
+  
   p {
     color: #b4bbc9;
     font-size: 1.4rem;
@@ -625,20 +602,12 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-/************************************ Section 6: Media Queries ********************************************/
+/************************************ Section 7: Media Queries ********************************************/
 
 // Landscape phones and down
 @media (min-width: 364px) {
   
   //Section 1: Header
-
   .header-social {
     width: 40%;
   }
@@ -656,13 +625,39 @@ footer {
     font-size: 10rem;
   }
 
+  //Section 6: Footer
+  footer {
+    padding-top: 20%;
+  }
 
-}
+  .blue-wrapper {
+    p {
+    font-size: 1.8rem;
+    width: 90%;
+    margin: 0 auto;
+    }
+  }
+  
+  .footer-logo {
+    padding-bottom: 5%;
+  }
+  
+  .footer-social {
+    margin: 10% auto 30% auto;
+    width: 70%;
+  }
+  
+  .copyright-wrapper {
+    p {
+      padding: 2%;
+    }
+  }
+} //End of the 364px Media Query
 
 // Landscape phone to portrait tablet
 @media (min-width: 641px) {
 
-    //Section 1: Header
+  //Section 1: Header
   h1 {
     font-size: 5rem;
   }
@@ -704,12 +699,10 @@ footer {
     padding-top: 12%;
   }
 
-    //Section 2: About me
+  //Section 2: About me
   .about-flex-right {
-
     p {
       font-size: 1.7rem;
-
     }
   
     a {
@@ -717,8 +710,7 @@ footer {
     }
   }
 
-
-
+  //Section 3: What I do
   .service-container {
     margin-top: 10%; 
 
@@ -726,19 +718,48 @@ footer {
       margin-bottom: 5%;
     }
 
-    li:hover h4:after {
+    li:hover h4:after,
+    li:active h4:after {
       right: 85%;
     }
-
-
   }
 
+  //Section 6: Footer
+  footer {
+    padding-top: 15%;
+  }
 
-}
+  .blue-wrapper {
+
+    p {
+    font-size: 1.8rem;
+    width: 90%;
+    margin: 0 auto;
+    }
+  }
+  
+  .footer-logo {
+    padding-bottom: 5%;
+  }
+  
+  .footer-social {
+    margin: 10% auto 20% auto;
+    width: 70%;
+  }
+  
+  .copyright-wrapper {
+
+    p {
+      padding: 2%;
+    }
+  }
+} //End of the 641px Media Query
+
 
 //Landscape phone to portrait tablet
 @media (min-width: 961px) {
 
+  //Section 1: Header
   .nav-wrapper {
     height: 85px;
   }
@@ -764,15 +785,13 @@ footer {
     display: block;
   }
 
-
   .drop-down-wrapper {
     width: 60%;
     display: flex;
     align-items: center;
   }
 
-
-  .sticky-wrapper {   //start of the code block for the sticky wrapper
+  .sticky-wrapper {   //Start of the sticky wrapper code block
     display: flex;
     justify-content: space-between;
 
@@ -793,10 +812,9 @@ footer {
      max-height: 150px;
      margin: 0;
     }
-
-  }  //End of code for sticky wrapper
+  }  //End of sticky wrapper code block
   
-  .nav { //Start of the code block for the navigation
+  .nav { //Start of the navigation code block
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -810,33 +828,34 @@ footer {
       padding: 20px;
     }
     
-    li:hover a:before  {
+    li:hover a:before,
+    li:active a:before  {
       right: 0%;
     }
-  }
+  } //End of the navigation code block
   
-  //About section Code
+  //Section 2: About
   .about-flex-wrapper {
     margin-top: 5%;
     padding: 5% 15%;
     display: flex;
     flex-direction: row;
-   justify-content: center;
-   }
+    justify-content: center;
+  }
 
-   .about-flex-left {
-     width: 35%;
-   }
+  .about-flex-left {
+    width: 35%;
+  }
 
-   .about-flex-right {
+  .about-flex-right {
     display: flex;
     flex-direction: column;
     width: 50%;
     margin-left: 5%;
 
     .contact-flex {
+    
       ul {   
-        
         li {
           width: 63%;
         }
@@ -844,30 +863,43 @@ footer {
     }
   }
 
+  //Section 3: What I do
   .service-container {
-
-    margin-top: 7%;  //add change as you scale
-  
-    // ul {
-      
-    // }
+    margin-top: 7%;
   
     li {
       width: 47.5%;
     }
 
-    li:hover h4:after {
+    li:hover h4:after,
+    li:active h4:after {
       right: 75%;
     }
   }
 
+  //Section 6: Footer
+  footer {
+    padding-top: 8%;
+  }
+  .blue-wrapper p {
+    width: 70%;
+  }
 
+  .footer-logo {
+    padding-bottom: 5%;
+  }
+  
+  .footer-social {  //Head of the social header section
+    margin: 10% auto 15% auto;
+    width: 40%;
+  }
+} //End of the 961px Media Query
 
-}
 
 // Portrait tablet and small desktops
 @media (min-width: 1281px) {
   
+  //Section 1: Header
   .background {
     top: -30px;
     left: 20%;
@@ -901,11 +933,12 @@ footer {
     padding-top: 5%; 
   }
 
+  //Section 2: About
   .my-mug {
     width: 18%;
   }
 
-  .about-flex-right {
+  .about-flex-right { //Start of the about flex right code block
 
     .contact-flex {
       ul {
@@ -914,6 +947,7 @@ footer {
         li {
           width: 50%;
         }
+
         li:last-child {
           margin-top: 0;
           margin-left: 10%;
@@ -921,17 +955,16 @@ footer {
       }
     }
  
-
     p {
       font-size: 2rem;
-
     }
   
     a {
       font-size: 2rem;
     }
-  }
+  } //End of the about flex right code block
 
+  //Section 3: What I do
   .what-we-do {
     h2:after {
       left: 45%;
@@ -940,11 +973,7 @@ footer {
   }
 
   .service-container {
-  
     margin-top: 5%;
-    // ul {
-      
-    // }
   
     li {
       background: white;
@@ -953,5 +982,27 @@ footer {
     }
   }
 
+  //Section 6: Footer
+  footer {
+    padding-top: 5%;
+  }
 
-}
+  .blue-wrapper p {
+    width: 40%;
+  }
+  
+  .footer-logo {
+    padding-bottom: 2%;
+  }
+  
+  .footer-social {
+    margin: 4% auto 4% auto;
+    width: 20%;
+  }
+
+  .copyright-wrapper {
+    p {
+      padding: 1%;
+    }
+  }
+} //End of the 1281px Media Query
