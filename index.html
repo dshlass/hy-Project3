@@ -224,66 +224,17 @@
         <p>&#169; Dale Shlass 2019, All Rights Reserved.</p>
       </div>
     </footer>
+    
     <div id="scrollToTop" class="back-to-top">
       <a href="#top"><i class="fas fa-angle-up"></i></a>
     </div>
-</body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+<script src="./js/index.js"></script>
+
+</body>
 
 
-<script>
-$(function() {
-        $('a').smoothScroll({
-            offset: -98
-        });
-    });
-</script>
-
-<script>
-
-navWrapper = document.getElementById("navWrapper");
-stickyWrapper= document.getElementById("sticky-wrapper");
-scrollToTop = document.getElementById("scrollToTop"); 
-
-
-function getYPosition() {
-  return window.scrollY;
-}
-
-function isChecked() {
-  return checked;
-}
-
-function navSticky() {
-  if (getYPosition() >= 1 ) {
-    navWrapper.className = "nav-wrapper nav-fixed";
-  } else {navWrapper.className = "nav-wrapper";
-}
-};
-
-function navShadow() {
-  if (getYPosition() >= 1 ) {
-        stickyWrapper.className = "sticky-wrapper drop-down-shadow";
-  } else { stickyWrapper.className = "sticky-wrapper";
-  }
-}
-
-function toTop() {
-  if (getYPosition() >= 300 ) {
-    scrollToTop.className = "back-to-top back-to-top-show";
-  } else {
-    scrollToTop.className = "back-to-top";
-  }
-};
-
-// injectStyles('a:hover { color: red; }'); FOR USE LATER ON IF NEEDED
-
-window.addEventListener("scroll", navSticky);
-window.addEventListener("scroll", navShadow);
-window.addEventListener("scroll", toTop);
-
-</script>
 
 </html>
