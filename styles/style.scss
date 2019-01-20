@@ -25,7 +25,7 @@
 @import 'normalize';
 
 $logo-orange: #F9A03F;
-$buttons: #ff4a57;
+$salmon: #ff4a57;
 
 $rufinaFont: 'Rufina', serif;
 
@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  padding: 0.1px;
+  margin-top: 0.1px;
   position: relative;
   background: #DBE3E9;
 }
@@ -68,12 +68,12 @@ a {
 h1 {
   font-weight: 700;
   font-size: 50px;
-  font-family: 'Rufina', serif;
+  font-family: $rufinaFont;
   visibility: hidden; //For the animation
 }
  
 .header-flex-left p {     
-  font-family: 'Rubik', serif;
+  font-family: $rubikFont;
   font-weight: normal;
   font-size: 2rem;
   color: #152136;
@@ -94,7 +94,7 @@ header {
   position: sticky;
   top: 4%;
   margin: 4% 4% 0 4%;
-  background: white;
+  background: #fff;
   height: 98px;
   z-index: 5;
   transition: all 0.5s;
@@ -124,14 +124,14 @@ header {
       padding: 20px;
       font-size: 1.6rem;
       font-weight: 600;
-      color: black;
+      color: #000;
     }  
 
     a:before {
       content: '';
       position:absolute;
       height: 2px;
-      background: linear-gradient(150deg, rgba(249,160,63,0.5), rgba(255,74,87,1));
+      background: linear-gradient(150deg, rgba(255,255,255,0.5), rgba(255,74,87,1));
       left: 0px;
       bottom: 0px;
       right: 100%;
@@ -152,6 +152,9 @@ nav ul li:hover a:before  {
   color: #fff;
   overflow: hidden;
 
+  a {
+    display: block;
+  }
   .header-logo {
     width: 50px;
     margin: 10px 0 0 20px;
@@ -171,8 +174,8 @@ nav ul li:hover a:before  {
    font-size: 30px;
    margin: 25px 15px;
    padding: 5px;
-   color: $logo-orange;
-   border: 2px solid $logo-orange;
+   color: $salmon;
+   border: 2px solid $salmon;
   }
   
   .tab-content {
@@ -185,7 +188,7 @@ nav ul li:hover a:before  {
   }
 
   input:checked ~ .tab-content {
-    max-height: 57vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
+    max-height: 100vh; //CHANGE THIS VALUE TO CONTROL THE HEIGHT OF THE SCROLLDOWN MENU
     border-bottom: 0.5px solid rgba(0,0,0,0.1);
   }
 }
@@ -193,7 +196,7 @@ nav ul li:hover a:before  {
 button {
   background-color: $logo-orange;
   border: none;
-  color: white;
+  color: #fff;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -243,14 +246,10 @@ button:focus {
   font-weight: 500;
   padding: 15px 15px;
   text-transform: uppercase;
-  background: $buttons;
+  background: $salmon;
   border-radius: 30px;
   letter-spacing: 2px;
   text-decoration: none;
-}
-
-.whatIDo:focus {  // MAKE IT LOOK BETTER
-  box-shadow: 0px 0px 56px 20px $logo-orange;
 }
 
 .header-social {  //Head of the social header section
@@ -270,7 +269,7 @@ button:focus {
   }
 
   a {
-    display: inline-block;
+    display: block;
     padding: 10px;
   }
 
@@ -306,7 +305,7 @@ button:focus {
 
 .back-to-top {
   position: fixed;
-  background: $buttons;
+  background: $salmon;
   height: 60px;
   width: 60px;
   right: 50px;
@@ -385,7 +384,7 @@ button:focus {
     font-size: 1.8rem;
     text-transform: uppercase;
     font-family: $rubikFont;
-    color: #ff4a57;
+    color: $salmon;
     font-weight: 500;
     letter-spacing: 2px;
   }
@@ -451,7 +450,7 @@ button:focus {
     font-size: 1.8rem;
     text-transform: uppercase;
     font-family: $rubikFont;
-    color: #ff4a57;
+    color: $salmon;
     font-weight: 500;
     letter-spacing: 2px;
   }
@@ -522,7 +521,7 @@ button:focus {
 
   li:hover h4:after {
     right: 75%;
-    background: #ff4a57;
+    background: $salmon;
   }
 
   p {
@@ -547,7 +546,7 @@ button:focus {
   }
 
   a:hover {
-    background: #ff4a57;
+    background: $salmon;
     color: #fff;
   }
 
@@ -556,6 +555,75 @@ button:focus {
   }
 
 }
+
+/************************************ Section 5: Footer ********************************************/
+footer {
+  padding-top: 30%;
+  background: #152136;
+  text-align: center;
+}
+.blue-wrapper {
+    p {
+    font-size: 1.8rem;
+    line-height: 30px;
+    margin-bottom: 0;
+    padding: 0 10px;
+    color: #b4bbc9;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+.footer-logo {
+  width: 65px;
+  margin: 0 auto;
+  padding-bottom: 10%;
+  
+}
+
+.footer-social {  //Head of the social header section
+  margin: 20% 0 30% 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    background: #1c2940;
+    border-radius: 50%;
+  }
+
+  li:hover a,
+  li:active a {
+    background: rgb(226, 225, 225);
+  }
+
+  a {
+    display: block;
+    padding: 30px;
+    border-radius: 50%;
+
+  }
+
+  i {
+    font-size: 2.2rem;
+    color: #717377;
+  }
+}
+
+.copyright-wrapper {
+  border-top: 0.5px solid #b4bbc9;
+  background: #1c2940;
+
+
+  p {
+    color: #b4bbc9;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 7%;
+  }
+}
+
 
 
 
@@ -822,7 +890,7 @@ button:focus {
     padding: 21px 53px;
     text-transform: uppercase;
     vertical-align: middle;
-    background: $buttons;
+    background: $salmon;
     border-radius: 30px;
     letter-spacing: 2px;
     text-decoration: none;
