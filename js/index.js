@@ -2,6 +2,16 @@ $(function() {
     $('a').smoothScroll({
         offset: -98
     });
+
+    // $('a').click(function(){
+    //   if ($(window).width() <= 961) {
+    //   // $('.tab-content').css('max-height','0px');
+    //   $('#toggle').toggle(function(){
+    //     $('#toggle').attr('checked', false);
+    //   });
+    //   }
+
+    // });
 });
 
 navWrapper = document.getElementById("navWrapper");

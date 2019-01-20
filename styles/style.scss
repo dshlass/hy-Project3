@@ -183,7 +183,7 @@ nav ul li:active a:before  {
   
   .tab-content {
     max-height: 0;
-    margin-top: 13px;
+    margin-top: 12px;
     overflow: hidden;
     background: #fff;
     transition: max-height 0.5s ease-out;
@@ -408,6 +408,23 @@ nav ul li:active a:before  {
     color: black;
   }
 } //End of about-flex-right code block
+
+.languages-wrapper {
+  margin-top: 10%;
+  h4 {
+    margin-bottom: 5%;
+  }
+  .languages {
+    display: flex;
+    justify-content: space-between;
+
+
+    svg {
+      width: 46px;
+      max-height: 46px;
+    }
+  }
+}
 
 .contact-logo {
   min-width: 46px;
@@ -724,6 +741,16 @@ footer {
     }
   }
 
+  .languages-wrapper {
+    h4 {
+      margin-bottom: 3%;
+    }
+  }
+
+  .languages {
+    width: 60%;
+  }
+
   //Section 6: Footer
   footer {
     padding-top: 15%;
@@ -877,6 +904,12 @@ footer {
     }
   }
 
+  .languages-wrapper {
+    h4 {
+      margin-bottom: 2%;
+    }
+  }
+
   //Section 6: Footer
   footer {
     padding-top: 8%;
@@ -963,6 +996,10 @@ footer {
       font-size: 2rem;
     }
   } //End of the about flex right code block
+
+    .languages {
+    width: 40%;
+  }
 
   //Section 3: What I do
   .what-we-do {

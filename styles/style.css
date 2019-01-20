@@ -396,7 +396,7 @@ nav ul li:active a:before {
 
 .sticky-wrapper .tab-content {
   max-height: 0;
-  margin-top: 13px;
+  margin-top: 12px;
   overflow: hidden;
   background: #fff;
   -webkit-transition: max-height 0.5s ease-out;
@@ -648,6 +648,28 @@ nav ul li:active a:before {
   font-weight: 700;
   line-height: 1.2;
   color: black;
+}
+
+.languages-wrapper {
+  margin-top: 10%;
+}
+
+.languages-wrapper h4 {
+  margin-bottom: 5%;
+}
+
+.languages-wrapper .languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.languages-wrapper .languages svg {
+  width: 46px;
+  max-height: 46px;
 }
 
 .contact-logo {
@@ -941,6 +963,12 @@ footer {
   .service-container li:active h4:after {
     right: 85%;
   }
+  .languages-wrapper h4 {
+    margin-bottom: 3%;
+  }
+  .languages {
+    width: 60%;
+  }
   footer {
     padding-top: 15%;
   }
@@ -1077,6 +1105,9 @@ footer {
   .service-container li:active h4:after {
     right: 75%;
   }
+  .languages-wrapper h4 {
+    margin-bottom: 2%;
+  }
   footer {
     padding-top: 8%;
   }
@@ -1141,6 +1172,9 @@ footer {
   }
   .about-flex-right a {
     font-size: 2rem;
+  }
+  .languages {
+    width: 40%;
   }
   .what-we-do h2:after {
     left: 45%;
