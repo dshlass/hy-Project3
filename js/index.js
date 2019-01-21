@@ -3,15 +3,11 @@ $(function() {
         offset: -98
     });
 
-    // $('a').click(function(){
-    //   if ($(window).width() <= 961) {
-    //   // $('.tab-content').css('max-height','0px');
-    //   $('#toggle').toggle(function(){
-    //     $('#toggle').attr('checked', false);
-    //   });
-    //   }
-
-    // });
+    $('a').click(function(){
+      if ($(window).width() <= 961) {
+        $('#toggle').prop('checked', false);
+      }
+    });
 });
 
 navWrapper = document.getElementById("navWrapper");
