@@ -576,8 +576,8 @@ nav ul li:active a:before  {
     font-family: $rufinaFont;
     font-size: 4.0rem;
     font-weight: 700;
-    padding: 0;
-    margin: 5% 0;
+    padding: 5% 0;
+    margin: 5% auto;
     position: relative;
   }
 
@@ -603,6 +603,7 @@ nav ul li:active a:before  {
 
   label {
     cursor: pointer;
+    width: 40%;
   }
 
   ul {
@@ -664,16 +665,64 @@ nav ul li:active a:before  {
     bottom:-2px;
   }
 
-  .before-after::before {
-    content: '';
-    height: 5px;
-    position: absolute;
-    background: linear-gradient(to right, $salmon 0%, $salmon 10%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, $salmon 90%, $salmon 100%);
-    top: 50%;
-    left: -10%;
-    right: -10%;
-  }
 } //End of the resume wrapper code block
+
+label[for="resume"] {
+  border-top: 2px solid #f4f7fb;
+  border-bottom: 2px solid #f4f7fb;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.left-right:before,
+.left-right:after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    background: $salmon;
+    transition: all 0.3s;
+  }
+
+ .left-right:before { 
+    top:-2px;
+    right:0;
+    left:70%;
+  }
+
+  .left-right:after {
+    bottom:-2px;
+    right:70%;
+    left:0;
+  }
+
+  .right-left:before,
+  .right-left:after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    background: $salmon;
+    transition: all 0.3s;
+  }
+
+  .right-left:before { 
+    top:-2px;
+    right:70%;
+    left:0;
+  }
+
+  .right-left:after {
+    bottom:-2px;
+    right:0;
+    left:70%;
+  }
+
+  .right-left:hover::before,
+  .right-left:hover::after,
+  .left-right:hover::before,
+  .left-right:hover::after  {
+    left: 0;
+    right: 0;
+  }
 
 input[name='resume'] {
   position: absolute;
@@ -909,7 +958,10 @@ footer {
 
    //Section 5: Resume
    .resume-wrapper {
-    
+    label {
+      padding: 3% 0;
+    }
+
     h3 {
       padding: 10% 0 3% 0;
     }
@@ -929,10 +981,6 @@ footer {
 
   li {
     margin: 5% 0;
-  }
-  .before-after::before {
-    left: 5%;
-    right: 5%;
   }
 }
 
@@ -1099,15 +1147,16 @@ footer {
     //Section 5: Resume
   .resume-wrapper {  //Start of the resume wrapper code block
     label {
-      margin: 2% 0;
-      position: relative
+      margin: 2% auto;
+      position: relative;
+      // width: %;
     }
   
     .label-wrapper {
       position: relative;
       flex-direction: row;
       justify-content: space-around;
-       margin: 0 auto;
+      margin: 0 auto;
     }
   
     .label-wrapper::after {
@@ -1129,10 +1178,6 @@ footer {
   
     li {
       width: 40%;
-    }
-    .before-after::before {
-      left: -20%;
-      right: -20%;
     }
   }
 
@@ -1258,11 +1303,6 @@ footer {
      
         .label-wrapper {
           width: 60%;
-        }
-
-        .before-after::before {
-          left: -15%;
-          right: -15%;
         }
     }
 
