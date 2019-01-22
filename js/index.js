@@ -1,15 +1,32 @@
 $(function() {
+    
+    //smoothScroll functionality
     $('a').smoothScroll({
         offset: -98
     });
 
+    //For the drop-down menu
     $('a').click(function(){
       if ($(window).width() <= 961) {
         $('#toggle').prop('checked', false);
       }
     });
+
+    //For the Resume page
+    $('#experience').click(function(){
+      $('#resume').prop('checked', true);
+      $('#experience').addClass('before-after');
+      $('#education').removeClass('before-after');
+    });
+    
+    $('#education').click(function(){
+      $('#resume').prop('checked', false);
+      $('#experience').removeClass('before-after');
+      $('#education').addClass('before-after');
+    });
 });
 
+//Section to control the navigation menu
 navWrapper = document.getElementById("navWrapper");
 stickyWrapper= document.getElementById("sticky-wrapper");
 scrollToTop = document.getElementById("scrollToTop"); 
@@ -44,8 +61,6 @@ function toTop() {
     scrollToTop.className = "back-to-top";
   }
 };
-
-// injectStyles('a:hover { color: red; }'); FOR USE LATER ON IF NEEDED
 
 window.addEventListener("scroll", navSticky);
 window.addEventListener("scroll", navShadow);

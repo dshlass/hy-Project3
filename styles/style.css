@@ -805,6 +805,168 @@ nav ul li:active a:before {
   font-size: 1.2rem;
 }
 
+/************************************ Section 5: Resume ********************************************/
+.resume-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resume-wrapper h3 {
+  margin: 0;
+  padding: 20% 0 5% 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: "Rubik", serif;
+  color: #ff4a57;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.resume-wrapper label {
+  color: #152136;
+  font-family: "Rufina", serif;
+  font-size: 4.0rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 5% 0;
+  position: relative;
+}
+
+.resume-wrapper h4 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: "Rufina", serif;
+}
+
+.resume-wrapper h5 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: "Rubik", serif;
+}
+
+.resume-wrapper p {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-bottom: 30%;
+  font-family: "Rubik", serif;
+}
+
+.resume-wrapper label {
+  cursor: pointer;
+}
+
+.resume-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15%;
+  padding-bottom: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resume-wrapper li {
+  margin: 10% 0;
+  position: relative;
+  border-top: 2px solid #f4f7fb;
+  border-bottom: 2px solid #f4f7fb;
+}
+
+.resume-wrapper li::before,
+.resume-wrapper li::after {
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 40%;
+  left: 40%;
+  background: #ff4a57;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resume-wrapper li::before {
+  top: -2px;
+}
+
+.resume-wrapper li::after {
+  bottom: -2px;
+}
+
+.resume-wrapper li:hover::before,
+.resume-wrapper li:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.resume-wrapper .no-animation::before,
+.resume-wrapper .no-animation::after {
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: #ff4a57;
+}
+
+.resume-wrapper .no-animation::before {
+  top: -2px;
+}
+
+.resume-wrapper .no-animation::after {
+  bottom: -2px;
+}
+
+.resume-wrapper .before-after::before {
+  content: '';
+  height: 5px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#ff4a57), color-stop(10%, #ff4a57), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0)), color-stop(90%, #ff4a57), to(#ff4a57));
+  background: linear-gradient(to right, #ff4a57 0%, #ff4a57 10%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 90%, #ff4a57 90%, #ff4a57 100%);
+  top: 50%;
+  left: 15%;
+  right: 15%;
+}
+
+input[name='resume'] {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+}
+
+input[name='resume']:checked + ul li.education {
+  display: block;
+}
+
+input[name='resume']:checked + ul li.experience {
+  display: none;
+}
+
+.education {
+  display: none;
+}
+
+.resume-logo {
+  padding-top: 15%;
+  margin: 0 auto;
+  max-width: 50px;
+}
+
+.label-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 /************************************ Section 6: Footer ********************************************/
 footer {
   padding-top: 30%;
@@ -846,6 +1008,7 @@ footer {
 .footer-social li:hover a,
 .footer-social li:active a {
   background: #e2e1e1;
+  border-radius: 50%;
 }
 
 .footer-social a {
@@ -968,6 +1131,22 @@ footer {
   }
   .languages {
     width: 60%;
+  }
+  .resume-wrapper h3 {
+    padding: 10% 0 3% 0;
+  }
+  .resume-wrapper h4 {
+    margin-top: 10%;
+  }
+  .resume-wrapper p {
+    margin-bottom: 10%;
+  }
+  .resume-wrapper ul {
+    margin-top: 5%;
+    padding-bottom: 10%;
+  }
+  .resume-wrapper li {
+    margin: 5% 0;
   }
   footer {
     padding-top: 15%;
@@ -1108,6 +1287,56 @@ footer {
   .languages-wrapper h4 {
     margin-bottom: 2%;
   }
+  .resume-wrapper label {
+    margin: 2% 0;
+    position: relative;
+  }
+  .resume-wrapper .label-wrapper {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .resume-wrapper .label-wrapper::after {
+    content: '';
+    width: 5px;
+    position: absolute;
+    top: 30%;
+    bottom: 30%;
+    right: calc(50% + 2.5px);
+    background: #e8ecf3;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .resume-wrapper ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .resume-wrapper li {
+    width: 40%;
+  }
+  .resume-wrapper .before-after::before {
+    content: '';
+    height: 5px;
+    position: absolute;
+    background: -webkit-gradient(linear, left top, right top, from(#ff4a57), color-stop(10%, #ff4a57), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0)), color-stop(90%, #ff4a57), to(#ff4a57));
+    background: linear-gradient(to right, #ff4a57 0%, #ff4a57 10%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 90%, #ff4a57 90%, #ff4a57 100%);
+    top: 50%;
+    left: -20%;
+    right: -20%;
+  }
   footer {
     padding-top: 8%;
   }
@@ -1187,6 +1416,13 @@ footer {
     background: white;
     width: 30%;
     padding: 5%;
+  }
+  .resume-wrapper ul {
+    margin-top: 2%;
+  }
+  .resume-wrapper li {
+    width: 30%;
+    margin: 2% 0;
   }
   footer {
     padding-top: 5%;
